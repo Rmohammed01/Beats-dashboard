@@ -1,0 +1,94 @@
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="logo">Beats Dashboard</div>
+    <nav class="nav">
+      <button class="nav-item active">Survey Details</button>
+      <button class="nav-item">Section 1</button>
+      <button class="nav-item">Section 2</button>
+      <button class="nav-item">Section 3</button>
+      <button class="nav-item">Section 4</button>
+      <button class="nav-item">Section 5</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <!-- TAB BAR -->
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-target="overview">Overview</button>
+      <button class="tab" data-target="purchasing-factors">Purchasing Factors</button>
+      <button class="tab" data-target="price-preferences">Price Preferences</button>
+      <button class="tab" data-target="purchasing-channels">Purchasing Channels</button>
+      <button class="tab" data-target="brand-recognition">Brand Recognition</button>
+    </div>
+
+    <!-- TAB PANELS -->
+    <section id="overview" class="panel tab-panel active">
+      <h2>Final Recommendation</h2>
+      <p>
+        Pursue a mid-range, culturally positioned high-fidelity speaker strategy,
+        anchored in strong purchase intent and clear differentiation from JBL, Sony, and Bose.
+      </p>
+    </section>
+
+    <section id="purchasing-factors" class="panel tab-panel">
+      <h2>Purchasing Factors</h2>
+      <ul>
+        <li>Sound quality and bass response ranked as the #1 decision driver.</li>
+        <li>Battery life and durability are key “table stakes” for outdoor use.</li>
+        <li>Brand reputation and design matter more for Gen Z than for older segments.</li>
+        <li>Water resistance and portability are must-have features for frequent users.</li>
+      </ul>
+    </section>
+
+    <section id="price-preferences" class="panel tab-panel">
+      <h2>Price Preferences</h2>
+      <ul>
+        <li>Most respondents prefer a price band of <strong>$150–$250</strong>.</li>
+        <li>Above $300, stated purchase intent drops sharply.</li>
+        <li>Pricing below $150 risks diluting Beats’ premium perception.</li>
+        <li>Sweet spot for a Beats high-fidelity speaker: <strong>$199–$249</strong>.</li>
+      </ul>
+    </section>
+
+    <section id="purchasing-channels" class="panel tab-panel">
+      <h2>Purchasing Channels</h2>
+      <ul>
+        <li>Top channels: online marketplaces (e.g., Amazon) and official brand sites.</li>
+        <li>Apple Store and carrier/retail partners are strong for in-person discovery.</li>
+        <li>Students show high comfort with direct-to-consumer online purchases.</li>
+        <li>Retail displays + creator reviews drive trial and conversion.</li>
+      </ul>
+    </section>
+
+    <section id="brand-recognition" class="panel tab-panel">
+      <h2>Brand Recognition</h2>
+      <ul>
+        <li>Beats enjoys high unaided awareness among 18–24 year-olds.</li>
+        <li>Perceived as stylish, bass-heavy, and culturally relevant.</li>
+        <li>Seen as a lifestyle brand more than a purely technical audio brand.</li>
+        <li>Strong opportunity to extend this equity into the high-fidelity speaker space.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<script>
+  // Simple tab switcher
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.getAttribute("data-target");
+
+      // update tab states
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // update panels
+      panels.forEach(panel => {
+        panel.classList.toggle("active", panel.id === targetId);
+      });
+    });
+  });
+</script>
